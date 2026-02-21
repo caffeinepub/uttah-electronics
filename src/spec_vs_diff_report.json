@@ -1,0 +1,59 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-18T12:32:36.730Z",
+  "summary": "The diff implements the requested single-page Uttah Electronics marketing site with responsive navigation/sections, a 3D hero scene using React Three Fiber, an additional 3D animated section divider with graceful degradation, a static 6-item product grid, a contact form with success interaction, and a consistent charcoal/emerald visual theme. Some extra authentication/actor scaffolding is added that was not requested.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication provider/context and related actor-query plumbing (React Query) added despite being explicitly not required for this request.",
+      "reason": "BuildRequest states third-party auth providers are a non-goal and Internet Identity is supported but not required; requirements focus on marketing site + 3D + theme, not authentication.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Backend Motoko actor file added (empty actor) even though no backend functionality was requested.",
+      "reason": "No requirements mention backend endpoints or backend changes; the added backend actor appears to be scaffolding unrelated to the marketing-site requirements.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Footer includes a caffeine.ai attribution link with UTM parameters.",
+      "reason": "Not requested in BuildRequest requirements or acceptance criteria; adds external branding/attribution behavior beyond scope.",
+      "evidence": [
+        "frontend/src/components/site/Footer.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/sections/AboutSection.tsx",
+    "frontend/src/components/sections/ContactSection.tsx",
+    "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+    "frontend/src/components/sections/FeaturedProductsSection.tsx",
+    "frontend/src/components/sections/HeroSection.tsx",
+    "frontend/src/components/site/Footer.tsx",
+    "frontend/src/components/site/TopNav.tsx",
+    "frontend/src/components/three/HeroScene3D.tsx",
+    "frontend/src/components/three/SectionDivider3D.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useContactForm.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useReducedMotionAndPerformance.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-electronics-company-website-named-uttah-electronics-with-a-complete-landing-page-style-structure-top-navigation-key-sections-suitable-for-a-small-brand-presence",
+      "featureTitle": "Create a responsive electronics company website named \"Uttah Electronics\" with a complete landing-page style structure (top navigation + key sections) suitable for a small brand presence.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/site/TopNav.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-coherent-site-sections-for-an-electronics-brand-hero-featured-categories-featured-products-static-sample-catalog-about-and-contact",
+      "featureTitle": "Add coherent site sections for an electronics brand: Hero, Featured Categories, Featured Products (static sample catalog), About, and Contact.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/sections/AboutSection.tsx",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+        "frontend/src/components/sections/FeaturedProductsSection.tsx",
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/hooks/useContactForm.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-3d-animations-on-the-website-using-three-js-via-react-three-fiber-include-a-3d-hero-scene-and-at-least-one-additional-animated-3d-element-section-transition-effect",
+      "featureTitle": "Implement 3D animations on the website using Three.js via React Three Fiber: include a 3D hero scene and at least one additional animated 3D element/section transition effect.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/components/three/HeroScene3D.tsx",
+        "frontend/src/components/three/SectionDivider3D.tsx",
+        "frontend/src/hooks/useReducedMotionAndPerformance.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-define-and-apply-a-consistent-visual-theme-colors-typography-spacing-component-style-across-the-entire-site-with-a-distinct-non-blue-non-purple-aesthetic-appropriate-for-a-modern-electronics-brand",
+      "featureTitle": "Define and apply a consistent visual theme (colors, typography, spacing, component style) across the entire site with a distinct non-blue/non-purple aesthetic appropriate for a modern electronics brand.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/sections/HeroSection.tsx",
+        "frontend/src/components/site/TopNav.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Uttah Electronics marketing site with 3D animated experience (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive landing-page structure for Uttah Electronics with top navigation and section jump links.",
+      "acceptanceCriteria": [
+        "The site name \"Uttah Electronics\" appears in the header/nav and on the main hero area.",
+        "Layout is responsive and usable on mobile, tablet, and desktop widths.",
+        "Navigation links scroll/jump to corresponding sections (or route) without broken links."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the main single-page layout shell with a sticky top navigation, anchored section layout, and wiring to all landing sections so navigation links jump to valid section IDs."
+        },
+        {
+          "path": "frontend/src/components/site/TopNav.tsx",
+          "operation": "create",
+          "description": "Add a responsive top navigation (brand wordmark + links) that scrolls/jumps to Hero, Categories, Products, About, and Contact sections; ensure the brand name \"Uttah Electronics\" appears in the nav."
+        },
+        {
+          "path": "frontend/src/components/site/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Add a shared layout wrapper to enforce consistent spacing/max-width and responsive section padding across the landing page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add Hero, Featured Categories, Featured Products (static), About, and Contact sections including a functioning client-side contact form interaction.",
+      "acceptanceCriteria": [
+        "Each section is present and visually distinct with headings and body text in English.",
+        "Featured Products renders a grid/list of at least 6 sample products (name, short description, price label or \"Request quote\").",
+        "Contact section includes a form UI with fields (Name, Email, Message) and a non-error submit interaction (e.g., client-side confirmation)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "create",
+          "description": "Implement the hero section content (English headline/copy) that includes \"Uttah Electronics\" prominently, and includes the generated background texture image at frontend/public/assets/generated/uttah-electronics-bg.dim_1920x1080.png."
+        },
+        {
+          "path": "frontend/src/components/sections/FeaturedCategoriesSection.tsx",
+          "operation": "create",
+          "description": "Create a Featured Categories section with 3–6 coherent electronics categories and consistent cards/tiles. Use shadcn-ui components (e.g., Card/Button) to keep styling consistent. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/FeaturedProductsSection.tsx",
+          "operation": "create",
+          "description": "Create a Featured Products section rendering a grid/list of at least 6 sample products (name, short description, and either a price label or \"Request quote\"). Use shadcn-ui components (e.g., Card/Badge/Button) for product tiles. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/AboutSection.tsx",
+          "operation": "create",
+          "description": "Create an About section describing the brand in English with consistent typography and spacing, aligned to the modern electronics theme."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create a Contact section with a form UI (Name, Email, Message) and a client-side submit confirmation state (no errors on submit). Use shadcn-ui form inputs/buttons where available. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useContactForm.ts",
+          "operation": "create",
+          "description": "Add a small client-only hook to manage contact form state, basic validation, and success confirmation behavior without backend submission."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire all created sections into the single-page layout in the required order and ensure each has a stable anchor ID that matches nav links."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add a React Three Fiber (Three.js) 3D hero scene plus an additional animated 3D element/transition, with graceful performance degradation.",
+      "acceptanceCriteria": [
+        "A 3D canvas renders in the hero area and displays a clear electronics-themed 3D scene (e.g., abstract circuit board, rotating device silhouettes, or glowing components).",
+        "The 3D scene includes continuous animation (e.g., rotation, subtle floating, animated lights/particles).",
+        "The 3D content degrades gracefully on small screens/performance-limited devices (e.g., reduced effects or smaller canvas) without breaking the page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/package.json",
+          "operation": "create",
+          "description": "Ensure required dependencies for Three.js via React Three Fiber are present (e.g., three, @react-three/fiber, and a helpers package such as @react-three/drei) so the 3D scenes can render in React."
+        },
+        {
+          "path": "frontend/src/components/three/HeroScene3D.tsx",
+          "operation": "create",
+          "description": "Implement the hero 3D canvas using React Three Fiber with an electronics-themed scene (e.g., stylized circuit traces, glowing nodes, rotating component silhouettes) and continuous animation."
+        },
+        {
+          "path": "frontend/src/components/three/SectionDivider3D.tsx",
+          "operation": "create",
+          "description": "Add an additional animated 3D element used as a section transition/divider (e.g., animated scanning line, particle ribbon, or rotating PCB strip) that is visibly distinct from the hero scene."
+        },
+        {
+          "path": "frontend/src/hooks/useReducedMotionAndPerformance.ts",
+          "operation": "create",
+          "description": "Add a hook to detect reduced motion preference and simple device/screen heuristics to reduce canvas effects (lower DPR, fewer particles, simpler materials) on small screens or performance-limited devices."
+        },
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Embed the HeroScene3D canvas into the hero area and apply graceful fallback behavior (e.g., reduced effects or hiding nonessential 3D layers) based on the reduced-motion/performance hook."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the additional 3D element (SectionDivider3D) into the landing page between appropriate sections to serve as an animated transition effect."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Define and apply a consistent modern theme across the site using a non-blue/non-purple palette, consistent typography, and component styling.",
+      "acceptanceCriteria": [
+        "A single cohesive theme is applied across navigation, sections, buttons, and typography.",
+        "Theme avoids default-looking styling and is consistent across pages/sections.",
+        "No blue/purple-dominant palette is used."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styling and theme tokens (CSS variables used by Tailwind/shadcn-ui) using a distinct modern electronics aesthetic that avoids blue/purple dominance (e.g., charcoal + amber/green accents), and set consistent typography/spacing defaults."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions as needed to support the new palette, typography scale, and consistent section spacing utilities across the site."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Wire the generated favicon asset frontend/public/assets/generated/uttah-electronics-favicon.dim_256x256.png into the document head and ensure the page title remains \"Uttah Electronics\"."
+        },
+        {
+          "path": "frontend/src/components/site/TopNav.tsx",
+          "operation": "modify",
+          "description": "Apply the site theme consistently to navigation (background, borders, link styles, active/hover states) and include the generated wordmark logo frontend/public/assets/generated/uttah-electronics-logo.dim_1024x256.png in the header. Use shadcn-ui components where appropriate (e.g., Button). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Align hero typography, buttons, and background treatment with the global theme and ensure the hero visually matches the rest of the site (including integrating frontend/public/assets/generated/uttah-electronics-bg.dim_1920x1080.png cohesively)."
+        }
+      ]
+    }
+  ]
+}

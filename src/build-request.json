@@ -1,0 +1,98 @@
+{
+  "kind": "build_request",
+  "title": "Uttah Electronics marketing site with 3D animated experience",
+  "projectName": "Uttah Electronics",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive electronics company website named \"Uttah Electronics\" with a complete landing-page style structure (top navigation + key sections) suitable for a small brand presence.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make a electronic website as name as Uttah Electronics"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The site name \"Uttah Electronics\" appears in the header/nav and on the main hero area.",
+        "Layout is responsive and usable on mobile, tablet, and desktop widths.",
+        "Navigation links scroll/jump to corresponding sections (or route) without broken links."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add coherent site sections for an electronics brand: Hero, Featured Categories, Featured Products (static sample catalog), About, and Contact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make a electronic website as name as Uttah Electronics"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each section is present and visually distinct with headings and body text in English.",
+        "Featured Products renders a grid/list of at least 6 sample products (name, short description, price label or \"Request quote\").",
+        "Contact section includes a form UI with fields (Name, Email, Message) and a non-error submit interaction (e.g., client-side confirmation)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement 3D animations on the website using Three.js via React Three Fiber: include a 3D hero scene and at least one additional animated 3D element/section transition effect.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "and create also a 3D animations for websites."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A 3D canvas renders in the hero area and displays a clear electronics-themed 3D scene (e.g., abstract circuit board, rotating device silhouettes, or glowing components).",
+        "The 3D scene includes continuous animation (e.g., rotation, subtle floating, animated lights/particles).",
+        "The 3D content degrades gracefully on small screens/performance-limited devices (e.g., reduced effects or smaller canvas) without breaking the page."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Define and apply a consistent visual theme (colors, typography, spacing, component style) across the entire site with a distinct non-blue/non-purple aesthetic appropriate for a modern electronics brand.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Make a electronic website as name as Uttah Electronics"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A single cohesive theme is applied across navigation, sections, buttons, and typography.",
+        "Theme avoids default-looking styling and is consistent across pages/sections.",
+        "No blue/purple-dominant palette is used."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Do not edit files under frontend/src/components/ui or any immutable paths listed in SYSTEM_CONTEXT; compose those components instead.",
+    "Keep backend as a single Motoko actor if backend changes are introduced."
+  ],
+  "nonGoals": [
+    "Implementing a full e-commerce checkout system (cart, payments, order fulfillment).",
+    "Integrating third-party authentication providers (only Internet Identity is supported, and is not required by this request).",
+    "Using external databases or external real-time services."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Wordmark logo reading \"Uttah Electronics\" with a clean modern tech aesthetic (uttah-electronics-logo.dim_1024x256.png)",
+      "Square favicon icon with a simple electronics-themed mark (uttah-electronics-favicon.dim_256x256.png)",
+      "Abstract dark electronics/circuit pattern background texture (uttah-electronics-bg.dim_1920x1080.png)"
+    ],
+    "edits": []
+  }
+}

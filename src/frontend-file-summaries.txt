@@ -1,0 +1,18 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the complete single-page layout with navigation, hero, categories, products, about, contact sections, and 3D dividers between sections.",
+  "frontend/src/components/site/TopNav.tsx": "Responsive sticky navigation header with logo, smooth-scrolling section links, mobile menu toggle, and scroll-based styling changes.",
+  "frontend/src/components/site/Footer.tsx": "Footer component with brand info, quick links, social media icons, and attribution including dynamic year and caffeine.ai link with UTM tracking.",
+  "frontend/src/components/sections/HeroSection.tsx": "Hero section with background image, 3D canvas scene, gradient overlays, headline, description, and CTA buttons that scroll to products and contact sections.",
+  "frontend/src/components/sections/FeaturedCategoriesSection.tsx": "Displays six electronics categories (Computing, Mobile, Displays, Audio, Photography, Wearables) in a responsive grid with icons and hover effects.",
+  "frontend/src/components/sections/FeaturedProductsSection.tsx": "Showcases six featured products in cards with names, descriptions, prices/quotes, ratings, badges, and add-to-cart buttons.",
+  "frontend/src/components/sections/AboutSection.tsx": "About section with company description, mission statement, and four statistics cards showing customer count, countries served, awards, and products sold.",
+  "frontend/src/components/sections/ContactSection.tsx": "Contact section with contact info cards (email, phone, location) and a functional form with name, email, message fields and success state.",
+  "frontend/src/components/three/HeroScene3D.tsx": "React Three Fiber 3D scene with animated glowing sphere, orbiting particles, and connecting rings that adapts to performance level and reduced motion preferences, with proper TypeScript typing for particle array.",
+  "frontend/src/components/three/SectionDivider3D.tsx": "Animated 3D wave particle effect used as section divider that gracefully degrades to gradient on low-performance devices, with corrected bufferAttribute args property.",
+  "frontend/src/hooks/useContactForm.ts": "Custom hook managing contact form state, validation, submission simulation, and success confirmation with auto-reset.",
+  "frontend/src/hooks/useReducedMotionAndPerformance.ts": "Hook detecting user's reduced motion preference and device performance level (high/medium/low) based on screen size, mobile detection, and CPU cores.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for future React Query hooks when backend methods are implemented.",
+  "frontend/src/index.css": "Global styles with OKLCH-based charcoal and emerald green color theme for both light and dark modes, custom typography settings, and utility classes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Inter font family, extended color tokens mapped to CSS variables, custom border radius, shadows, and animation keyframes.",
+  "frontend/index.html": "HTML entry point with meta tags, favicon link, Inter font from Google Fonts, and root div for React mounting."
+}
